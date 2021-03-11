@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -18,17 +18,18 @@
   font-family: Arial, monospace;
 }
 
+
 .card .btn {
-  align-self: center;
   display: block;
   background: #F6B352;
   color: white;
   padding: 15px 20px;
-  margin: 20px 0;
+  margin: 20px 0px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.9);
   transition: all 200ms ease-in-out;
   text-decoration: none;
+  
 }
 .card .btn:hover {
   background: #F68657;
