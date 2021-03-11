@@ -61,4 +61,10 @@ function renderStarship(starship) {
     return newColumn;
 }
 
+function deleteStarship(id) {
+    axios.delete(contextPath + "/delete/" + id)
+        .then(() => getStarships())
+        .catch(err => console.error(err))
+}
+
 getStarships();
