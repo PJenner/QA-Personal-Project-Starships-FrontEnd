@@ -693,6 +693,17 @@ body {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+
+.lcars-element.rounded.button {
+  border-radius: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
 .lcars-element.button {
   cursor: pointer;
 }
