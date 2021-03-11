@@ -1,8 +1,11 @@
 "use strict"
 
+const modalBG = document.querySelector('.modal-bg');
+let id;
 const contextPath = "http://localhost:8080";
 const output = document.getElementById("output");
 
+// Get Starships
 function getStarships() {
     axios.get(contextPath + "/getAll")
         .then(res => {
@@ -17,6 +20,8 @@ function getStarships() {
         }).catch(err => console.error(err))
 }
 
+
+// Render on page
 function renderStarship(starship) {
 
     const newColumn = document.createElement("div");
@@ -55,18 +60,55 @@ function renderStarship(starship) {
     const updateStarshipButton = document.createElement("a");
     updateStarshipButton.className = "card btn";
     updateStarshipButton.innerText = "Update";
-    updateStarshipButton.addEventListener('click', () => updateStarship(starship.id));
+    updateStarshipButton.addEventListener('click', function () {
+        id = starship.id;
+        modalBG.classList.add('bg-active');
+    });
+
+    const modalClose = document.querySelector('.modal-close');
+    modalClose.addEventListener('click', function () {
+        modalBG.classList.remove('bg-active');
+    });
+
+    const spacerElement = document.createElement("a");
+    spacerElement.className = "card newbtn";
+    StarshipFooter.appendChild(spacerElement);
     StarshipFooter.appendChild(updateStarshipButton);
 
     return newColumn;
 }
 
+// Delete Starships
 function deleteStarship(id) {
     axios.delete(contextPath + "/delete/" + id)
         .then(() => getStarships())
         .catch(err => console.error(err))
 }
 
+document.getElementById("starshipFormModal").addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const data = {
+        name: this.modalName.value,
+        model: this.modalModel.value,
+        age: this.modalAge.value
+    };
+
+    axios.put(contextPath + "/update/" + id, data, {
+        headers: {
+            "Content-Type": "application/json", // sending JSON
+            "Accept": "application/json" // gimme JSON
+        }
+    })
+
+        .then(() => {
+            this.reset();
+            getStarships();
+        })
+        .catch(err => console.error(err));
+});
+
+// Create form
 document.getElementById("starshipForm").addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -91,4 +133,5 @@ document.getElementById("starshipForm").addEventListener('submit', function (eve
         .catch(err => console.error(err));
 });
 
+// Always get Starships
 getStarships();
