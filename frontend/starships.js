@@ -1,5 +1,6 @@
 "use strict"
 
+
 const contextPath = "http://localhost:8080";
 const output = document.getElementById("output");
 
@@ -55,7 +56,14 @@ function renderStarship(starship) {
     const updateStarshipButton = document.createElement("a");
     updateStarshipButton.className = "card btn";
     updateStarshipButton.innerText = "Update";
-    updateStarshipButton.addEventListener('click', () => updateStarship(starship.id));
+    const modalBG = document.querySelector('.modal-bg');
+    updateStarshipButton.addEventListener('click', function () {
+        modalBG.classList.add('bg-active');
+    });
+    const modalClose = document.querySelector('.modal-close');
+    modalClose.addEventListener('click', function () {
+        modalBG.classList.remove('bg-active');
+    });
     StarshipFooter.appendChild(updateStarshipButton);
 
     return newColumn;
@@ -66,6 +74,7 @@ function deleteStarship(id) {
         .then(() => getStarships())
         .catch(err => console.error(err))
 }
+
 
 document.getElementById("starshipForm").addEventListener('submit', function (event) {
     event.preventDefault();
