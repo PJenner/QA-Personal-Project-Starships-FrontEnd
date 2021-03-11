@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starship Docking</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="lcars-main/lcars/css/lcars.css">
+    <link rel="stylesheet" href="card.css">
+    <!-- CSS only -->
+
+
+    <!-- CSS only -->
+</head>
+
+<body>
+    <div class="lcars-app-container">
+
+        <!-- HEADER ==================================================== -->
+
+        <div id="header" class="lcars-row header">
+
+            <!-- ELBOW -->
+            <div class="lcars-elbow left-bottom lcars-golden-tanoi-bg"></div>
+
+            <!-- BAR WITH TITLE -->
+            <div class="lcars-bar horizontal">
+                <div class="lcars-title right">LCARS</div>
+            </div>
+
+            <!-- ROUNDED EDGE DECORATED -->
+            <div class="lcars-bar horizontal right-end decorated"></div>
+        </div>
+
+        <!-- SIDE MENU ================================================= -->
+        <div id="left-menu" class="lcars-column start-space lcars-u-1" style="text-transform: uppercase;">
+            <a>
+                <div class="lcars-element lcars-chestnut-rose-bg">45336</div>
+            </a>
+            <a>
+                <div class="lcars-element">3453</div>
+            </a>
+            <a>
+                <div class="lcars-element">2535</div>
+            </a>
+            <a>
+                <div class="lcars-element">785</div>
+            </a>
+            <a>
+                <div class="lcars-element">35346</div>
+            </a>
+            <a>
+                <div class="lcars-element">3643</div>
+            </a>
+            <a>
+                <div class="lcars-element">34535</div>
+            </a>
+            <a>
+                <div class="lcars-element">234</div>
+            </a>
+            <a>
+                <div class="lcars-element">13</div>
+            </a>
+            <a>
+                <div class="lcars-element">747</div>
+            </a>
+            <a>
+                <div class="lcars-element">54545</div>
+            </a>
+            <a>
+                <div class="lcars-element">236</div>
+            </a>
+            <div class="lcars-bar lcars-u-1"></div>
+            <div class="lcars-bar lcars-u-1"></div>
+        </div>
+
+        <!-- FOOTER ==================================================== -->
+        <div id="footer" class="lcars-row ">
+            <!-- ELBOW -->
+            <div class="lcars-elbow left-top lcars-golden-tanoi-bg"></div>
+            <!-- BAR -->
+            <div class="lcars-bar horizontal both-divider bottom"></div>
+            <!-- ROUNDED EDGE -->
+            <div class="lcars-bar horizontal right-end left-divider bottom"></div>
+        </div>
+
+        <div id="container">
+            <!-- COLUMN LAYOUT-->
+            <div class="lcars-row lcars-u-11" style="width: 100%;">
+                <div class="lcars-text-box blink big" style="width: 100%;">
+                    <div class="lcars-column" style="width: 50%; padding-left: 20px;">
+                        <p>Database Online</p>
+                    </div>
+                    <div class="lcars-column right-centered"
+                        style="text-align: right; width: 50%; padding-right: 45px;;">
+                        <p>Starship Terminal<br>235BV354</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 50px; padding-left: 20px;">
+                <button type="submit" class="lcars-element rounded button">Create</button>
+                <br>
+                <button type="reset" class="lcars-element rounded button">Reset</button>
+            </div>
+            <section>
+                <div id="output">
+                </div>
+            </section>
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="starships.js"></script>
+</body>
+
+</html>

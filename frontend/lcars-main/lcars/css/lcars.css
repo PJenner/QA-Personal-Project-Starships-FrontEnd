@@ -622,6 +622,12 @@ body {
   height: 100%;
   background-color: #000;
 }
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
 .lcars-bar.right-end {
   width: 1.5rem;
   max-width: 1.5rem;
@@ -651,7 +657,7 @@ body {
   padding-left: 0.16667rem;
   padding-right: 0.16667rem;
   padding-bottom: 0.16667rem;
-  display: inline-block;
+  display: inline-flex
   font-size: 150%;
   height: 100%;
 }
@@ -692,6 +698,17 @@ body {
   border-radius: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.lcars-element.rounded.button {
+  border-radius: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 .lcars-element.button {
   cursor: pointer;
