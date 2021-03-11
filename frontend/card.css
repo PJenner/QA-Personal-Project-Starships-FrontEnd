@@ -23,14 +23,29 @@
   display: block;
   background: #F6B352;
   color: white;
+  width: calc(33.3333%);
   padding: 15px 20px;
   margin: 20px 0px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.9);
   transition: all 200ms ease-in-out;
   text-decoration: none;
-  
+  cursor: pointer;
 }
+
+.card .newbtn {
+
+  background:#1F2124;
+  width: calc(33.3333%);
+  padding: 15px 20px;
+  margin: 20px 0px;
+  border-radius: 5px;
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .card .btn:hover {
   background: #F68657;
 }
