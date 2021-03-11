@@ -67,4 +67,28 @@ function deleteStarship(id) {
         .catch(err => console.error(err))
 }
 
+document.getElementById("starshipForm").addEventListener('submit', function (event) {
+    event.preventDefault();
+
+
+    const data = {
+        name: this.name.value,
+        model: this.model.value,
+        age: this.age.value
+    };
+
+    axios.post(contextPath + "/create", data, {
+        headers: {
+            "Content-Type": "application/json", // sending JSON
+            "Accept": "application/json" // gimme JSON
+        }
+    })
+        .then(() => {
+            this.reset();
+            this.name.focus();
+            getStarships();
+        })
+        .catch(err => console.error(err));
+});
+
 getStarships();
