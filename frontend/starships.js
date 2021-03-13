@@ -15,7 +15,7 @@ function getStarships() {
             starships.forEach(starship => {
                 const newStarship = renderStarship(starship);
                 console.log("New Starship: ", newStarship);
-                output.appendChild(newStarship);
+                output.prepend(newStarship);
             });
         }).catch(err => console.error(err))
 }
@@ -52,13 +52,13 @@ function renderStarship(starship) {
     newStarship.appendChild(StarshipFooter);
 
     const deleteStarshipButton = document.createElement("a");
-    deleteStarshipButton.className = "card btn";
+    deleteStarshipButton.className = "card delete";
     deleteStarshipButton.innerText = "Delete";
     deleteStarshipButton.addEventListener('click', () => deleteStarship(starship.id));
     StarshipFooter.appendChild(deleteStarshipButton);
 
     const updateStarshipButton = document.createElement("a");
-    updateStarshipButton.className = "card btn";
+    updateStarshipButton.className = "card update";
     updateStarshipButton.innerText = "Update";
     updateStarshipButton.addEventListener('click', function () {
         id = starship.id;
@@ -103,6 +103,7 @@ document.getElementById("starshipFormModal").addEventListener('submit', function
 
         .then(() => {
             this.reset();
+            modalBG.classList.remove('bg-active');
             getStarships();
         })
         .catch(err => console.error(err));
