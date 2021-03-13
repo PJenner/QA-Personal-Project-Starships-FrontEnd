@@ -10,26 +10,26 @@
 var lcarsAudio = {
 	audioExtensions: {
 		ogg: "ogg",
-		webm:"webm",
+		webm: "webm",
 		mp4: "aac"
 	},
 	audioPath: "./audio/",
 	audioType: "",
 	//Inidividual Sound Element holders
-	audTactInputAcknowledge:    null,
+	audTactInputAcknowledge: null,
 	audTactInputAltAcknowledge: null,
 	audTactInputNegAcknowledge: null,
-	audAlert:                   null,
-	audRedAlert:                null,
-	audReady:                   null,
-	initialize: function(auDummy) {
+	audAlert: null,
+	audRedAlert: null,
+	audReady: null,
+	initialize: function (auDummy) {
 		//Determine browser capability and willingness
 		for (var key in this.audioExtensions) {
-			if (auDummy.canPlayType("audio/"+this.audioExtensions[key]) != '') {
+			if (auDummy.canPlayType("audio/" + this.audioExtensions[key]) != '') {
 				auDummy.src = this.audioPath + "ready." + key;
 				//TODO: test it further??
-				console.log(auDummy.src + "   " +auDummy.src.lastIndexOf(".")); 
-				this.audioType =  auDummy.src.slice(auDummy.src.lastIndexOf(".") + 1);
+				console.log(auDummy.src + "   " + auDummy.src.lastIndexOf("."));
+				this.audioType = auDummy.src.slice(auDummy.src.lastIndexOf(".") + 1);
 				console.log("lcarsAudio: We have a winner: " + this.audioType);
 				break;
 			}
@@ -45,50 +45,50 @@ var lcarsAudio = {
 		var button_list = document.querySelectorAll("#container div.lcars-element.button, div.lcars-app-container div.lcars-element.button");
 		for (var button of button_list) {
 			console.log("Audio-enabling container-contained button " + button.id + " " + button.innerText);
-			button.addEventListener("click", function(){ lcarsAudio.TactileInputAcknowledge(); }); 
+			button.addEventListener("click", function () { lcarsAudio.TactileInputAcknowledge(); });
 		}
 
 		button_list = document.querySelectorAll("path.button");
 		for (var button of button_list) {
-			console.log("Audio-enabling SVG button " + button.id );
-			button.addEventListener("click", function(){ lcarsAudio.TactileInputAcknowledge(); }); 
+			console.log("Audio-enabling SVG button " + button.id);
+			button.addEventListener("click", function () { lcarsAudio.TactileInputAcknowledge(); });
 		}
 
 		button_list = document.querySelectorAll(".lcars-tactinput-acknowledge-audio");
 		for (var button of button_list) {
 			console.log("Audio-enabling button " + button.id + " " + button.innerText);
-			button.addEventListener("click", function(){ lcarsAudio.TactileInputAcknowledge(); }); 
+			button.addEventListener("click", function () { lcarsAudio.TactileInputAcknowledge(); });
 		}
 		button_list = document.querySelectorAll(".lcars-tactinput-alt-acknowledge-audio");
 		for (var button of button_list) {
 			console.log("Audio-enabling button " + button.id + " " + button.innerText);
-			button.addEventListener("click", function(){ lcarsAudio.TactileInputAlternateAcknowledge(); }); 
+			button.addEventListener("click", function () { lcarsAudio.TactileInputAlternateAcknowledge(); });
 		}
 		button_list = document.querySelectorAll(".lcars-tactinput-neg-acknowledge-audio");
 		for (var button of button_list) {
 			console.log("Audio-enabling button " + button.id + " " + button.innerText);
-			button.addEventListener("click", function(){ lcarsAudio.TactileInputNegativeAcknowledge(); }); 
+			button.addEventListener("click", function () { lcarsAudio.TactileInputNegativeAcknowledge(); });
 		}
 		button_list = document.querySelectorAll(".lcars-alert-audio");
 		for (var button of button_list) {
 			console.log("Audio-enabling button " + button.id + " " + button.innerText);
-			button.addEventListener("click", function(){ lcarsAudio.Alert(); }); 
+			button.addEventListener("click", function () { lcarsAudio.Alert(); });
 		}
 		button_list = document.querySelectorAll(".lcars-red-alert-audio");
 		for (var button of button_list) {
 			console.log("Audio-enabling button " + button.id + " " + button.innerText);
-			button.addEventListener("click", function(){ lcarsAudio.RedAlert(); }); 
+			button.addEventListener("click", function () { lcarsAudio.RedAlert(); });
 		}
 
 		//Range input a.k.a. "sliders"; does this need special behavior?
 		button_list = document.querySelectorAll("input[type='range']");
 		for (var button of button_list) {
 			console.log("Audio-enabling range slider " + button.id + " " + button.name);
-			button.addEventListener("click", function(){ lcarsAudio.TactileInputAcknowledge(); }); 
+			button.addEventListener("click", function () { lcarsAudio.TactileInputAcknowledge(); });
 		}
 
 	},
-	TactileInputAcknowledge: function() {
+	TactileInputAcknowledge: function () {
 		this.audTactInputAcknowledge.play();
 	},
 	TactileInputAlternateAcknowledge: function () {
@@ -119,16 +119,16 @@ var lcarsAudio = {
 				console.warn("Autoplay was prevented. User interaction required before playback will be allowed by browser.");
 			});
 		} else {
-		       console.warn("Didn't even get a promise back. Possibly some error or device limitation.");
+			console.warn("Didn't even get a promise back. Possibly some error or device limitation.");
 		}
 	}
 }
 
 function enableAudio(el) {
 	if (el.classList.contains("disabled")) {
-		el.addEventListener("click", function(){ audioNegativeAcknowledge(); }); 
+		el.addEventListener("click", function () { audioNegativeAcknowledge(); });
 	} else {
-		el.addEventListener("click", function(){ audioAcknowledge(); }); 
+		el.addEventListener("click", function () { audioAcknowledge(); });
 	}
 }
 
@@ -139,7 +139,7 @@ lcarsAudio.initialize(audDummy);
 
 /*
  * To have an All "booted" up notification, place this little snippet at the bottom of the page in a script block:
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) {
 	//Note though: Many browsers won't play this next sound at first
 	//because the user hasn't "blessed" the action with a UI click yet.
 	lcarsAudio.Ready();
