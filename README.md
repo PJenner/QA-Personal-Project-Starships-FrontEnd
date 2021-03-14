@@ -6,7 +6,7 @@ This is the README for my first personal project with QA Academy training.
 
 - [Introduction](#Introduction)
 - [Project Scope](#Project-Scope)
-- [Technology Limitations](#Technology-constraints)
+- [Technology Limitations](#Technology-Limitations)
 - [Jira Board](#Jira-Board)
 - [Database](#Database)
 - [Back end](#Back-end)
@@ -28,17 +28,17 @@ The scope of this project, including the MVP, is outlined below:
 
 - Provide a Kanban style Jira board following the SCRUM methedology and applying Agile principles, outlining user stories and tasks. My Jira board can be found [here] - (https://pjennerqa.atlassian.net/secure/RapidBoard.jspa?rapidView=2&atlOrigin=eyJpIjoiNjhlYWMzNzI5YTliNDM5Njg4NDAyNTEyMWExMmNiYjciLCJwIjoiaiJ9) 
 
-Clear Documentation outlining the project, approaches taken and technology used. For this, I am utilising this README file.
+- Clear Documentation outlining the project, approaches taken and technology used. For this, I am utilising this README file.
 
-A relational database used for data persistence on the project, integrated with my application.
+- A relational database used for data persistence on the project, integrated with my application.
 
-A functioning application made using Java as the specified OOP language, following best practices.
+- A functioning application made using Java as the specified OOP language, following best practices.
 
-A functioning front-end website with a UI and API integration, allowing for user interaction.
+- A functioning front-end website with a UI and API integration, allowing for user interaction.
 
-Test suit with maximum coverage, inclusive of integration, unit and automated testing, with a high level of acceptable coverage for the whole project.
+- Test suit with maximum coverage, inclusive of integration, unit and automated testing, with a high level of acceptable coverage for the whole project.
 
-Code stored and fully integrated into a Version Control System to ensure security of the project.
+- Code stored and fully integrated into a Version Control System to ensure security of the project.
 
 ## Technology Limitations
 
@@ -59,7 +59,7 @@ My Kanban board for this project was creating using Jira software, utilising an 
 
 An example of a user story can be seen below, with subtasks given specific weightings
 
-![Jira user story example](./Images/JiraBoaedImage2.png)
+![Jira user story example](./Images/JiraBoardImage2.png)
 
 The Jira board was designed so that each task followed a logical flow and could be marked as completed, with the plan flowing through the completion requirements for the project. Tasks can be marked as 'to do', 'in progress' and finally marked as 'done' when completed.
 
@@ -125,6 +125,8 @@ The aim of this project was to achieve all of the specifications, being consciou
 I'd like to thank the QA trainers for assisting in the completion of this project and their excellent training.
 
 Special thanks to my family for their ongoing support, as always.
+
+Thanks to God!
 
 Project by Peter Jenner
 
