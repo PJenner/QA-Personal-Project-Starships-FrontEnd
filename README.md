@@ -73,11 +73,16 @@ The database design utilised for this project included the H2 Console located lo
 
 ## Back-end
 
+The Github Repo for my Back-End can be found [here](https://github.com/PJenner/QA-Personal-Project-Starships)
+
 The back-end is written in Java using the Spring Boot framework and Maven to manage dependencies, utilising the Eclipse IDE. Using Spring with Maven allows for fast testing of the application during coverage tests and convenient management of the dependencies required to run the application. 
 
 Included in the back end are the Controller methods required to make the HTTP requests, as well as the logic which links the application to the database. The code has been written following SOLID principles with a focus on using interfaces that can be easily changed if required in the future.
 
 ## Front-end
+
+The Github Repo for my Front-End can be found [here](https://github.com/PJenner/QA-Personal-Project-Starships-FrontEnd)
+
 
 The front-end of the application is written in HTML, CSS and JavaScript using the Visual Studio Code IDE. 
 
